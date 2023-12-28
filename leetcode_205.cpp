@@ -1,3 +1,5 @@
+// Check if two strings are isomorphic or not
+
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
