@@ -10,11 +10,10 @@ public:
             if(g[i] <= s[j])
             {
                 i++;
-                j++;
                 count++;
             }
-            else
-                j++;
+            
+            j++;
         }
 
         return count;
