@@ -5,12 +5,11 @@ public:
 
         for(string a : logs)
         {
-            if(a[0] == '.')
+            if(a == "../")
             {
-                if(a[1] == '.')
-                    count = max(0, count - 1);
+                count = max(0, count - 1);
             }
-            else
+            else if(a != "./")
             {
                 count++;
             }
