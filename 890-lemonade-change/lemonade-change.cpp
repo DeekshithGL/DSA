@@ -10,20 +10,14 @@ public:
             else if(i == 10)
             {
                 if(five >= 1)
-                {
-                    five--;
-                    ten++;
-                }
-                else 
+                    five--, ten++;
+                else
                     return false;
             }
             else
             {
-                if(five && ten)
-                {
-                    five--;
-                    ten--;
-                }
+                if(ten && five)
+                    ten--, five--;
                 else if(five >= 3)
                     five -= 3;
                 else 
