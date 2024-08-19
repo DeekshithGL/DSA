@@ -4,7 +4,6 @@ private:
     {
         if(idx == nums.size())
         {
-            sort(op.begin(), op.end());
             res.insert(op);
             return ;
         }
@@ -19,7 +18,7 @@ public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         set<vector<int>> result;
         vector<int> op;
-
+        sort(nums.begin(), nums.end());
         solve(nums, result, op, 0);
         vector<vector<int>> res2(result.begin(), result.end());
         
