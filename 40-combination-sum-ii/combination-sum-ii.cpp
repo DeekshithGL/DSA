@@ -4,7 +4,7 @@ private:
 
     void solve(vector<int>& cand, vector<int>& op, int target, int sum, int idx)
     {
-        if(sum == target && find(result.begin(), result.end(), op) == result.end())
+        if(sum == target)
         {
             result.push_back(op);
             return ;
