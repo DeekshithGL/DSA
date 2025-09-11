@@ -1,27 +1,24 @@
 class Solution {
     private:
     bool isVowel(char a){
-        a = tolower(a);
-        if(a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u')
-            return true;
-        else
-            return false;
+        static const string vowels = "aeiouAEIOU";
+        return vowels.find(a) != string::npos;
     }
 public:
     string sortVowels(string s) {
-        vector<int> vec;
-        string vowels = "";
-        for(int i = 0; i < s.size(); i++){
-            if(isVowel(s[i])){
-                vec.push_back(i);
-                vowels += s[i];
-            }
+        vector<char> vowels;
+        
+        for(char c : s){
+            if(isVowel(c))
+                vowels.push_back(c);
         }
 
         sort(vowels.begin(), vowels.end());
-        int x = 0;
-        for(int i : vec){
-            s[i] = vowels[x++];
+
+        int idx = 0;
+        for(char &c : s){
+            if(isVowel(c))
+                c = vowels[idx++];
         }
 
         return s;
